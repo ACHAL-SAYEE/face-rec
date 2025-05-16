@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 initializeDB();
 
-const uploadDir = path.join(__dirname, "uploads/faces/images");
+const uploadDir = path.join(__dirname, "uploads/faces/images", { recursive: true });
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
