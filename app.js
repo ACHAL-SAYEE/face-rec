@@ -24,7 +24,7 @@ initializeDB();
 
 const uploadDir = path.join(__dirname, "uploads/faces/images");
 if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
+  fs.mkdirSync(uploadDir,{recursive:true});
 }
 
 const clearTargetFolder = (req, res) => {
@@ -353,8 +353,10 @@ app.post(
     }
   }
 );
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get("*name", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
