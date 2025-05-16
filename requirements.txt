@@ -1,0 +1,13 @@
+opencv-python
+keras_facenet
+numpy
+os
+pandas
+datetime
+mtcnn
+scipy
+mediapipe
+ultralytics
+deep_sort_realtime
+screeninfo
+sys
